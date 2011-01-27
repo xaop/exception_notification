@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name = 'xaop-exception_notification'
-  s.version = '1.0.1'
+  s.version = '1.0.2'
   s.authors = ["Jamis Buck", "Josh Peek", "Joeri Samson"]
-  s.date = %q{2010-03-13}
+  s.date = %q{2011-01-27}
   s.summary = "Exception notification by email for Rails 3 apps"
   s.description = "This gem differs from the exception_notifier gem in 3 ways:
 a) It actually works, because the latest commits on from the github rails/exception_notification repository are incorporated
