@@ -16,10 +16,11 @@ class ExceptionNotifier
   end
 
   def call(env)
+    env["exception_notifier.options"] ||= {}
+    env["exception_notifier.options"].merge!(@options)
     @app.call(env)
   rescue Exception => exception
-    options = (env['exception_notifier.options'] ||= {})
-    options.reverse_merge!(@options)
+    options = env['exception_notifier.options']
 
     unless Array.wrap(options[:ignore_exceptions]).include?(exception.class)
       Notifier.exception_notification(env, exception).deliver
